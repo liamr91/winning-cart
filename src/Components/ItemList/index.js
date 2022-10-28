@@ -8,11 +8,13 @@ import Checkbox from "@mui/material/Checkbox";
 import Avatar from "@mui/material/Avatar";
 import "./styles.css";
 
-export default function ItemList({ product, showCheckbox, paid }) {
+export default function ItemList({ product, showCheckbox, paid, updateItem }) {
   const [checked, setChecked] = useState(product.selected)
 
   const handleChange = (event) => {
     setChecked(event.target.checked);
+    product.selected = event.target.checked
+    updateItem(product, event.target.checked)
   };
 
   return (

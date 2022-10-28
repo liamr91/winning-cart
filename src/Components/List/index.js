@@ -3,14 +3,14 @@ import { React, useState } from "react";
 import ItemList from "../ItemList";
 import "./styles.css"
 
-export default function List({splitPayment, products}) {
+export default function List({splitPayment, products, updateItems}) {
 
   return (
     <div id="table-container">
         <table className="table">
         {products.map((product) => { 
             if(!product.paid) {
-                return <ItemList paid={product.paid} product={product} showCheckbox={splitPayment} />;
+                return <ItemList paid={product.paid} product={product} showCheckbox={splitPayment} updateItem={updateItems} />;
             }
         })}
         </table>

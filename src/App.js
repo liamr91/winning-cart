@@ -59,9 +59,19 @@ function App() {
   const handleClickSplitPayment = () => {
     setSplitPayment(!splitPayment)
   }
+
+  const updateProducts = (product, checked) => {
+    let found = productList.find(item => item.id === product.id);
+    let index = productList.indexOf(found);
+    const copyOfState = productList
+    copyOfState[index].selected = checked
+    setProductList(copyOfState)
+  }
+
   return (
     <div className="App">
-      <List products={list} splitPayment={splitPayment} />
+      <List products={list} splitPayment={splitPayment} updateItems={updateProducts}/>
+      <button onClick={handleClickSplitPayment}>hello</button>
     </div>
   );
 }
