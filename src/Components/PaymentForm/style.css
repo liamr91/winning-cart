@@ -1,0 +1,9 @@
+.form-wrap {
+    margin: 0 auto;
+    max-width: 780px;
+}
+
+button {
+    background: #ca1134 !important;
+    border: 1px solid #ca1134 !important;
+}
