@@ -9,12 +9,18 @@ import Avatar from "@mui/material/Avatar";
 import "./styles.css"
 
 export default function ItemList({ product }) {
+  const [checked, setChecked] = useState(product.selected)
+
+  const handleChange = (event) => {
+    setChecked(event.target.checked);
+  };
 
   return (
     <div className="product">
         <img src={product.img} alt={product.name}/>
         <p> {product.name}</p>
         <p> {product.price}</p>
+      <Checkbox checked={checked} onChange={handleChange} />
     </div>
   )
 }

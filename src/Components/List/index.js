@@ -14,7 +14,8 @@ export default function List() {
 
     const [products, setProducts] = useState(productList)
 
-    const handleCheckboxClick = (product) => {
+    const handleCheckboxClick = (product, event) => {
+        console.log(event)
         const productsB = products
         const productToUpdate = productsB.find(item => item.id === product.id)
         productToUpdate.selected = !product.selected
@@ -29,7 +30,7 @@ export default function List() {
                return (
                     <div>
                         <ItemList product={product} />
-                        <Checkbox onChange={() => handleCheckboxClick(product)} checked={product.selected} />
+                        
                     </div>
                 )
             })} 
