@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -7,6 +8,8 @@ import FormLabel from "@mui/material/FormLabel";
 
 export default function PaymentOptions() {
 
+    const [selected, setSelected] = useState(null)
+
     // const controlProps = (item) => ({
 	// 		checked: selectedValue === item,
 	// 		onChange: handleChange,
@@ -14,6 +17,11 @@ export default function PaymentOptions() {
 	// 		name: "color-radio-button-demo",
 	// 		inputProps: { "aria-label": item },
 	// 	});
+
+    const handleChange = (e) => {
+			setSelected(e.target.value);
+            console.log(selected)
+		};
         
 	return (
 		<FormControl>
@@ -39,6 +47,7 @@ export default function PaymentOptions() {
 				}}
 			>
 				<FormControlLabel
+					onChange={handleChange}
 					value="Card"
 					control={
 						<Radio
@@ -53,6 +62,7 @@ export default function PaymentOptions() {
 					label="Card"
 				/>
 				<FormControlLabel
+					onChange={handleChange}
 					value="PayPal"
 					control={
 						<Radio
