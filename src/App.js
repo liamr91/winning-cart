@@ -44,12 +44,14 @@ function App() {
   }
 
   const calculateTotal = () => {
-    const totals = productList.map(product => product.price)
+    const totals = productList.map(product => {
+      if(!product.paid) return product.price 
+    })
     return totals.reduce(calculation)
   }
 
   const calculateSplitTotal = () => {
-    const splitTotals = productList.map( product => {
+    const splitTotals = productList.map(product => {
       if(product.selected) return product.price
     })
 
@@ -71,7 +73,6 @@ function App() {
   return (
     <div className="App">
       <List products={list} splitPayment={splitPayment} updateItems={updateProducts}/>
-      <button onClick={handleClickSplitPayment}>hello</button>
     </div>
   );
 }
