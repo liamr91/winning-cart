@@ -9,6 +9,7 @@
 .table {
   width: 600px;
   border-spacing: 0px;
+  margin: auto;
 }
 
 #paid-for {
@@ -18,5 +19,8 @@
 
 #table-container{
     padding: 10px 10px 0px 10px;
+    min-width: 50vw;
+    margin: auto;
+
 
 }

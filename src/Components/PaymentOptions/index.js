@@ -26,7 +26,8 @@ export default function PaymentOptions({ splitPayment }) {
 	};
 
 	const handleSplitOnClick = () => {
-		splitPayment()
+		splitPayment();
+        setClicked(true);
 	}
 
     function Payment() {
