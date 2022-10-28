@@ -22,7 +22,7 @@ export default function ItemList({ product, showCheckbox, paid }) {
       </td>
       <td>
         {" "}
-        <p> {product.name}</p>
+        <h4> {product.name}</h4>
       </td>
       <td>
         {" "}

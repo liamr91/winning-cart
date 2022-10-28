@@ -8,4 +8,15 @@
 
 .table {
   width: 600px;
+  border-spacing: 0px;
+}
+
+#paid-for {
+  text-align: left;
+  /* padding: 5px; */
+}
+
+#table-container{
+    padding: 10px 10px 0px 10px;
+
 }

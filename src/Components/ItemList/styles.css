@@ -18,19 +18,23 @@
     justify-content: space-between;
     /* align-items: center; */
     flex-direction: row;
-    border: 1px solid black;
+    border: 1px solid rgb(0, 0, 0);
     text-align: left;
     background-color: #f3f3f3;
     color: #c4c4c4;
-    /* border: 1xp solid red; */
+    padding: 10px;
+    
 
 }
 
 .table-paid td, .table-not-paid td {
-    /* outline: 1px solid red; */
+    padding: 7px 2px 
 }
 
 table {
     border-collapse: collapse;
-    /* border: 1px solid black; */
+}
+
+.table-not-paid h4 {
+    color: rgb(0, 0, 0)
 }

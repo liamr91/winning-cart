@@ -44,7 +44,7 @@ export default function List({splitPayment}) {
   const [products, setProducts] = useState(productList);
 
   return (
-    <>
+    <div id="table-container">
         <table className="table">
         {products.map((product) => { 
             if(!product.paid) {
@@ -53,7 +53,7 @@ export default function List({splitPayment}) {
         })}
         </table>
 
-        <div id="paid-for">Paid For</div>
+        <h3 id="paid-for">Paid For</h3>
 
         <table className="table">
         {products.map((product) => { 
@@ -62,6 +62,6 @@ export default function List({splitPayment}) {
             }
         })}
         </table>
-    </>
+    </div>
   );
 }
