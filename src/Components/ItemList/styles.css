@@ -1,0 +1,9 @@
+.product {
+    display: flex;
+    height: auto;
+    width: 600px;
+    justify-content: space-between;
+    flex-direction: row;
+    border: 1px solid black;
+
+}

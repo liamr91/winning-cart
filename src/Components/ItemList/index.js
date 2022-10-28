@@ -6,24 +6,27 @@ import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Checkbox from "@mui/material/Checkbox";
 import Avatar from "@mui/material/Avatar";
+import "./styles.css"
 
-export default function ItemList() {
-  const [checked, setChecked] = useState([1]);
+export default function ItemList({ product }) {
+  
 
-  //code from mui
 
-  const handleToggle = (value) => () => {
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
+    /*
+    Lowest level component = row 
+        -   checkbox
+        -   takes product as prop
+    
+    */
 
-    if (currentIndex === -1) {
-      newChecked.push(value);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
 
-    setChecked(newChecked);
-  };
 
-  return <List></List>;
+  return (
+    <div className="product">
+        <img src={product.img} alt={product.name}/>
+        <p> {product.name}</p>
+        <p> {product.price}</p>
+        <Checkbox />
+    </div>
+  )
 }
