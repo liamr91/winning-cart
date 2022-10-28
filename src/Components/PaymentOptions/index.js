@@ -5,6 +5,7 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
+import PaymentButtons from "../PayNowButton";
 
 export default function PaymentOptions() {
 
@@ -18,12 +19,24 @@ export default function PaymentOptions() {
 	// 		inputProps: { "aria-label": item },
 	// 	});
 
+	const handleClick = () =>{
+		if(selected === "PayPal"){
+			return (
+				<div>Hi, You chose PayPal!</div>
+			)
+		} if(selected === "Card"){
+			return (
+				<div>Hi, You chose Card!</div>
+			)
+		}
+	}
     const handleChange = (e) => {
 			setSelected(e.target.value);
-            console.log(selected)
+            console.log(e.target.value)
 		};
         
 	return (
+		<>
 		<FormControl>
 			<FormLabel
 				sx={{
@@ -78,5 +91,7 @@ export default function PaymentOptions() {
 				/>
 			</RadioGroup>
 		</FormControl>
+		<PaymentButtons onClick = {handleClick}/>
+		</>
 	);
 }

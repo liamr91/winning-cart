@@ -7,13 +7,15 @@ const PayNow = styled.button`
   border-radius: 10px;
   border: 2.5px solid #d2212e;
   background-color: #d2212e;
+  color: white;
 `;
 const Split = styled.button`
   width: 5rem;
   height: 2rem;
   border-radius: 10px;
   background-color: white;
-  border: 2.5px solid #d2212e;
+  border: 1.5px solid #d2212e;
+  color: #d2212e;
 `;
 const ButtonContainer = styled.div`
   display: flex;
@@ -23,12 +25,14 @@ const ButtonContainer = styled.div`
   text-align: center;
 `;
 
-export default function PaymentButtons() {
+
+
+export default function PaymentButtons(handleClick) {
   return (
     <>
       <ButtonContainer>
-        <PayNow>Pay Now</PayNow>
-        <Split>Split</Split>
+        <PayNow onClick = {handleClick}>Pay Now</PayNow>
+        <Split >Split</Split>
       </ButtonContainer>
     </>
   );
