@@ -1,9 +1,12 @@
 .product {
-    display: flex;
+    /* display: flex; */
     height: auto;
     width: 600px;
     justify-content: space-between;
+    /* align-items: center; */
     flex-direction: row;
     border: 1px solid black;
+    text-align: left;
+
 
 }

@@ -6,7 +6,7 @@ import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Checkbox from "@mui/material/Checkbox";
 import Avatar from "@mui/material/Avatar";
-import "./styles.css"
+import "./styles.css";
 
 export default function ItemList({ product, showCheckbox }) {
   const [checked, setChecked] = useState(product.selected)
@@ -16,11 +16,19 @@ export default function ItemList({ product, showCheckbox }) {
   };
 
   return (
-    <div className="product">
-        <img src={product.img} alt={product.name}/>
+    <tr className="product">
+      <td>
+        <img src={product.img} alt={product.name} />
+      </td>
+      <td>
+        {" "}
         <p> {product.name}</p>
-        <p> {product.price}</p>
-        {showCheckbox && <Checkbox checked={checked} onChange={handleChange} />}
-    </div>
+      </td>
+      <td>
+        {" "}
+        <p> {product.price}</p>{" "}
+      </td>
+      {showCheckbox && <Checkbox checked={checked} onChange={handleChange} />}
+    </tr>
   )
-}
+  }

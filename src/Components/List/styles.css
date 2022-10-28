@@ -1,0 +1,11 @@
+.product-table {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 600px;
+}
+
+.table {
+  width: 600px;
+}
