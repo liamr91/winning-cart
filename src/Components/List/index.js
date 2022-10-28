@@ -10,18 +10,8 @@ const productList = [
     { id: 5, name: "Hash browns", price: 1.2, quantity: 2, paid: false, selected: false },
 ];
 
-export default function List() {
-
+export default function List({splitPayment}) {
     const [products, setProducts] = useState(productList)
-
-    const handleCheckboxClick = (product, event) => {
-        console.log(event)
-        const productsB = products
-        const productToUpdate = productsB.find(item => item.id === product.id)
-        productToUpdate.selected = !product.selected
-        setProducts(productsB)
-        console.log(products, 'products in state')
-    }
 
     return(
         <div>
@@ -29,8 +19,7 @@ export default function List() {
                 console.log(product, 'product in jsx')
                return (
                     <div>
-                        <ItemList product={product} />
-                        
+                        <ItemList product={product} showCheckbox={splitPayment} />
                     </div>
                 )
             })} 

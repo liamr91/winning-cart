@@ -8,7 +8,7 @@ import Checkbox from "@mui/material/Checkbox";
 import Avatar from "@mui/material/Avatar";
 import "./styles.css"
 
-export default function ItemList({ product }) {
+export default function ItemList({ product, showCheckbox }) {
   const [checked, setChecked] = useState(product.selected)
 
   const handleChange = (event) => {
@@ -20,7 +20,7 @@ export default function ItemList({ product }) {
         <img src={product.img} alt={product.name}/>
         <p> {product.name}</p>
         <p> {product.price}</p>
-      <Checkbox checked={checked} onChange={handleChange} />
+        {showCheckbox && <Checkbox checked={checked} onChange={handleChange} />}
     </div>
   )
 }
