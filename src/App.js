@@ -34,6 +34,7 @@ const list = [
     selected: false,
   },
 ];
+import PaymentOptions from "./Components/PaymentOptions";
 
 function App() {
   const [splitPayment, setSplitPayment] = useState(false)
@@ -73,6 +74,9 @@ function App() {
   return (
     <div className="App">
       <List products={list} splitPayment={splitPayment} updateItems={updateProducts}/>
+      <header className="App-header">
+        <PaymentOptions />
+      </header>
     </div>
   );
 }
