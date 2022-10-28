@@ -6,21 +6,31 @@ import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Checkbox from "@mui/material/Checkbox";
 import Avatar from "@mui/material/Avatar";
-import "./styles.css"
+import "./styles.css";
 
 export default function ItemList({ product }) {
-  const [checked, setChecked] = useState(product.selected)
+  const [checked, setChecked] = useState(product.selected);
 
   const handleChange = (event) => {
     setChecked(event.target.checked);
   };
 
   return (
-    <div className="product">
-        <img src={product.img} alt={product.name}/>
+    
+    <tr className="product">
+      <td>
+        <img src={product.img} alt={product.name} />
+      </td>
+      <td>
+        {" "}
         <p> {product.name}</p>
-        <p> {product.price}</p>
+      </td>
+      <td>
+        {" "}
+        <p> {product.price}</p>{" "}
+      </td>
+
       <Checkbox checked={checked} onChange={handleChange} />
-    </div>
-  )
+    </tr>
+  );
 }
