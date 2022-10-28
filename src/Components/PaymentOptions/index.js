@@ -8,10 +8,10 @@ import FormLabel from "@mui/material/FormLabel";
 import PaymentButtons from "../PayNowButton";
 
 export default function PaymentOptions() {
+	const [selected, setSelected] = useState(null);
+	const [clicked, setClicked] = useState(false);
 
-    const [selected, setSelected] = useState(null)
-
-    // const controlProps = (item) => ({
+	// const controlProps = (item) => ({
 	// 		checked: selectedValue === item,
 	// 		onChange: handleChange,
 	// 		value: item,
@@ -19,80 +19,88 @@ export default function PaymentOptions() {
 	// 		inputProps: { "aria-label": item },
 	// 	});
 
-	const onClick = () =>{
-        console.log("clicked")
-		if(selected === "PayPal"){
-			return (
-				<div>Hi, You chose PayPal!</div>
-			)
-		} if(selected === "Card"){
-			return (
-				<div>Hi, You chose Card!</div>
-			)
-		}
-	}
-    const handleChange = (e) => {
-			setSelected(e.target.value);
-            console.log(e.target.value)
-		};
-        
+	const onClick = () => {
+		console.log("clicked");
+		setClicked(true);
+	};
+	// 	if(selected === "PayPal"){
+	// 		return (
+	// 			<div>Hi, You chose PayPal!</div>
+	// 		)
+	// 	} if(selected === "Card"){
+	// 		return (
+	// 			<div>Hi, You chose Card!</div>
+	// 		)
+	// 	}
+	// }
+	const handleChange = (e) => {
+		setSelected(e.target.value);
+		console.log(e.target.value);
+	};
+
 	return (
 		<>
-		<FormControl>
-			<FormLabel
-				sx={{
-					color: "white",
-					"&.Mui-focused": {
+			<FormControl>
+				<FormLabel
+					sx={{
 						color: "white",
-					},
-				}}
-				id="demo-radio-buttons-group-label"
-			>
-				Select Payment Method:
-			</FormLabel>
-			<RadioGroup
-				aria-labelledby="demo-radio-buttons-group-label"
-				name="radio-buttons-group"
-				sx={{
-					color: "white",
-					"&.Mui-focused": {
+						"&.Mui-focused": {
+							color: "white",
+						},
+					}}
+					id="demo-radio-buttons-group-label"
+				>
+					Select Payment Method:
+				</FormLabel>
+				<RadioGroup
+					aria-labelledby="demo-radio-buttons-group-label"
+					name="radio-buttons-group"
+					sx={{
 						color: "white",
-					},
-				}}
-			>
-				<FormControlLabel
-					onChange={handleChange}
-					value="Card"
-					control={
-						<Radio
-							sx={{
-								color: "#D2212E",
-								"&.Mui-checked": {
+						"&.Mui-focused": {
+							color: "white",
+						},
+					}}
+				>
+					<FormControlLabel
+						onChange={handleChange}
+						value="Card"
+						control={
+							<Radio
+								sx={{
 									color: "#D2212E",
-								},
-							}}
-						/>
-					}
-					label="Card"
-				/>
-				<FormControlLabel
-					onChange={handleChange}
-					value="PayPal"
-					control={
-						<Radio
-							sx={{
-								color: "#D2212E",
-								"&.Mui-checked": {
+									"&.Mui-checked": {
+										color: "#D2212E",
+									},
+								}}
+							/>
+						}
+						label="Card"
+					/>
+					<FormControlLabel
+						onChange={handleChange}
+						value="PayPal"
+						control={
+							<Radio
+								sx={{
 									color: "#D2212E",
-								},
-							}}
-						/>
-					}
-					label="PayPal"
-				/>
-			</RadioGroup>
-		</FormControl>
-		<PaymentButtons onClick={onClick}/>
+									"&.Mui-checked": {
+										color: "#D2212E",
+									},
+								}}
+							/>
+						}
+						label="PayPal"
+					/>
+				</RadioGroup>
+			</FormControl>
+			<PaymentButtons onClick={onClick} />
+
+			if (clicked === true)
+				<div>Hi, You chose PayPal!</div>
+			
+				<div>Hi, You chose Card!</div>
+			
 		</>
 	);
 }
