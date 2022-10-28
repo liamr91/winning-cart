@@ -11,6 +11,7 @@ function App() {
   return (
     <div className="App">
       <List splitPayment={splitPayment} />
+      <button onClick={handleClickSplitPayment}>hello</button>
     </div>
   );
 }
