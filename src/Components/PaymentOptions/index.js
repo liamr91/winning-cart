@@ -23,6 +23,16 @@ export default function PaymentOptions() {
 		console.log("clicked");
 		setClicked(true);
 	};
+
+    function Payment() {
+  if (clicked && selected === "PayPal") {
+    return <div>Hi, You chose PayPal!</div>;
+  }
+   if (clicked && selected === "Card") {
+    return <div>Hi, You chose Card!</div>;
+  }
+}
+
 	// 	if(selected === "PayPal"){
 	// 		return (
 	// 			<div>Hi, You chose PayPal!</div>
@@ -96,11 +106,7 @@ export default function PaymentOptions() {
 			</FormControl>
 			<PaymentButtons onClick={onClick} />
 
-			if (clicked === true)
-				<div>Hi, You chose PayPal!</div>
-			
-				<div>Hi, You chose Card!</div>
-			
+  <Payment></Payment>
 		</>
 	);
 }
