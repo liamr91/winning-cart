@@ -19,7 +19,8 @@ export default function PaymentOptions() {
 	// 		inputProps: { "aria-label": item },
 	// 	});
 
-	const handleClick = () =>{
+	const onClick = () =>{
+        console.log("clicked")
 		if(selected === "PayPal"){
 			return (
 				<div>Hi, You chose PayPal!</div>
@@ -91,7 +92,7 @@ export default function PaymentOptions() {
 				/>
 			</RadioGroup>
 		</FormControl>
-		<PaymentButtons onClick = {handleClick}/>
+		<PaymentButtons onClick={onClick}/>
 		</>
 	);
 }

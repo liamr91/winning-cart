@@ -27,12 +27,12 @@ const ButtonContainer = styled.div`
 
 
 
-export default function PaymentButtons(handleClick) {
+export default function PaymentButtons({onClick}) {
   return (
     <>
       <ButtonContainer>
-        <PayNow onClick = {handleClick}>Pay Now</PayNow>
-        <Split >Split</Split>
+        <PayNow onClick={onClick}>Pay Now</PayNow>
+        <Split onClick={onClick}>Split</Split>
       </ButtonContainer>
     </>
   );
