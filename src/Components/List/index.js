@@ -11,6 +11,7 @@ const productList = [
     quantity: 2,
     paid: false,
     selected: false,
+    img: "",
   },
   {
     id: 2,
@@ -52,7 +53,7 @@ export default function List({splitPayment}) {
         })}
         </table>
 
-        <div>I have been paid for</div>
+        <div id="paid-for">Paid For</div>
 
         <table className="table">
         {products.map((product) => { 

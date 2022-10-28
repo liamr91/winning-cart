@@ -18,7 +18,7 @@ export default function ItemList({ product, showCheckbox, paid }) {
   return (
     <tr className={paid? 'table-paid' : 'table-not-paid'}>
       <td>
-        <img src={product.img} alt={product.name} />
+        {/* <img src={product.img} alt={product.name} /> */}
       </td>
       <td>
         {" "}
@@ -26,7 +26,7 @@ export default function ItemList({ product, showCheckbox, paid }) {
       </td>
       <td>
         {" "}
-        <p> {product.price}</p>{" "}
+        <p> £{product.price.toFixed(2)}</p>{" "}
       </td>
       {showCheckbox && <Checkbox checked={checked} onChange={handleChange} />}
     </tr>

@@ -1,4 +1,4 @@
-.product {
+.table-not-paid {
     /* display: flex; */
     height: auto;
     width: 600px;
@@ -7,6 +7,30 @@
     flex-direction: row;
     border: 1px solid black;
     text-align: left;
+    /* border: 1xp solid red; */
 
 
+}
+.table-paid {
+    /* display: flex; */
+    height: auto;
+    width: 600px;
+    justify-content: space-between;
+    /* align-items: center; */
+    flex-direction: row;
+    border: 1px solid black;
+    text-align: left;
+    background-color: #f3f3f3;
+    color: #c4c4c4;
+    /* border: 1xp solid red; */
+
+}
+
+.table-paid td, .table-not-paid td {
+    /* outline: 1px solid red; */
+}
+
+table {
+    border-collapse: collapse;
+    /* border: 1px solid black; */
 }
