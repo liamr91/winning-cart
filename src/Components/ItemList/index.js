@@ -9,24 +9,12 @@ import Avatar from "@mui/material/Avatar";
 import "./styles.css"
 
 export default function ItemList({ product }) {
-  
-
-
-    /*
-    Lowest level component = row 
-        -   checkbox
-        -   takes product as prop
-    
-    */
-
-
 
   return (
     <div className="product">
         <img src={product.img} alt={product.name}/>
         <p> {product.name}</p>
         <p> {product.price}</p>
-        <Checkbox />
     </div>
   )
 }
