@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState } from 'react'
 import List from "./Components/List";
+import PaymentOptions from "./Components/PaymentOptions";
 
 const list = [
   {
@@ -34,7 +35,6 @@ const list = [
     selected: false,
   },
 ];
-import PaymentOptions from "./Components/PaymentOptions";
 
 function App() {
   const [splitPayment, setSplitPayment] = useState(false)
@@ -75,7 +75,7 @@ function App() {
     <div className="App">
       <List products={list} splitPayment={splitPayment} updateItems={updateProducts}/>
       <header className="App-header">
-        <PaymentOptions />
+        <PaymentOptions splitPayment={handleClickSplitPayment}/>
       </header>
     </div>
   );
