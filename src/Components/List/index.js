@@ -34,7 +34,7 @@ const productList = [
     name: "Hash browns",
     price: 1.2,
     quantity: 2,
-    paid: false,
+    paid: true,
     selected: false,
   },
 ];
@@ -43,10 +43,24 @@ export default function List({splitPayment}) {
   const [products, setProducts] = useState(productList);
 
   return (
-    <table className="table">
-      {products.map((product) => {
-          return <ItemList product={product} showCheckbox={splitPayment} />;
-      })}
-    </table>
+    <>
+        <table className="table">
+        {products.map((product) => { 
+            if(!product.paid) {
+                return <ItemList paid={product.paid} product={product} showCheckbox={splitPayment} />;
+            }
+        })}
+        </table>
+
+        <div>I have been paid for</div>
+
+        <table className="table">
+        {products.map((product) => { 
+            if(product.paid) {
+                return <ItemList paid={product.paid} product={product} showCheckbox={false} />;
+            }
+        })}
+        </table>
+    </>
   );
 }

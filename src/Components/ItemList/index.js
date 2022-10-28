@@ -8,7 +8,7 @@ import Checkbox from "@mui/material/Checkbox";
 import Avatar from "@mui/material/Avatar";
 import "./styles.css";
 
-export default function ItemList({ product, showCheckbox }) {
+export default function ItemList({ product, showCheckbox, paid }) {
   const [checked, setChecked] = useState(product.selected)
 
   const handleChange = (event) => {
@@ -16,7 +16,7 @@ export default function ItemList({ product, showCheckbox }) {
   };
 
   return (
-    <tr className="product">
+    <tr className={paid? 'table-paid' : 'table-not-paid'}>
       <td>
         <img src={product.img} alt={product.name} />
       </td>
