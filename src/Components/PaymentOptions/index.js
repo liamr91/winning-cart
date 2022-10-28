@@ -6,6 +6,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import PaymentButtons from "../PayNowButton";
+import PayPal  from "../Paypal/Paypal";
 
 export default function PaymentOptions() {
 	const [selected, setSelected] = useState(null);
@@ -26,7 +27,7 @@ export default function PaymentOptions() {
 
     function Payment() {
   if (clicked && selected === "PayPal") {
-    return <div>Hi, You chose PayPal!</div>;
+    return <PayPal/>;
   }
    if (clicked && selected === "Card") {
     return <div>Hi, You chose Card!</div>;
