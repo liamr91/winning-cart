@@ -8,7 +8,7 @@ import FormLabel from "@mui/material/FormLabel";
 import PaymentButtons from "../PayNowButton";
 import PayPal  from "../Paypal/Paypal";
 
-export default function PaymentOptions() {
+export default function PaymentOptions({ splitPayment }) {
 	const [selected, setSelected] = useState(null);
 	const [clicked, setClicked] = useState(false);
 
@@ -24,6 +24,10 @@ export default function PaymentOptions() {
 		console.log("clicked");
 		setClicked(true);
 	};
+
+	const handleSplitOnClick = () => {
+		splitPayment()
+	}
 
     function Payment() {
   if (clicked && selected === "PayPal") {
@@ -105,7 +109,7 @@ export default function PaymentOptions() {
 					/>
 				</RadioGroup>
 			</FormControl>
-			<PaymentButtons onClick={onClick} />
+			<PaymentButtons onClick={onClick} handleSplitOnClick={handleSplitOnClick}/>
 
   <Payment></Payment>
 		</>

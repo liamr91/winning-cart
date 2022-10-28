@@ -1,0 +1,40 @@
+.table-not-paid {
+    /* display: flex; */
+    height: auto;
+    width: 600px;
+    justify-content: space-between;
+    /* align-items: center; */
+    flex-direction: row;
+    border: 1px solid black;
+    text-align: left;
+    /* border: 1xp solid red; */
+
+
+}
+.table-paid {
+    /* display: flex; */
+    height: auto;
+    width: 600px;
+    justify-content: space-between;
+    /* align-items: center; */
+    flex-direction: row;
+    border: 1px solid rgb(0, 0, 0);
+    text-align: left;
+    background-color: #f3f3f3;
+    color: #c4c4c4;
+    padding: 10px;
+    
+
+}
+
+.table-paid td, .table-not-paid td {
+    padding: 7px 2px 
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.table-not-paid h4 {
+    color: rgb(0, 0, 0)
+}
